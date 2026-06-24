@@ -67,12 +67,12 @@ python -m venv .venv
 source .venv/bin/activate
 
 
-Install dependencies
+#Install dependencies
 
 pip install pandas numpy joblib sqlalchemy psycopg2-binary scikit-learn tensorflow streamlit jupyter
 
 
-Run the application
+#Run the application
 
 streamlit run app.py
 
