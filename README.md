@@ -54,7 +54,7 @@ app.py: The production Streamlit application that fetches the latest 100 days of
 
 Clone the repository
 
-git clone https://github.com/YourUsername/chennai-weather-gru-forecaster.git
+git clone https://github.com/HariniJeyashree/chennai-weather-gru-forecaster.git
 cd chennai-weather-gru-forecaster
 
 
