@@ -1,18 +1,18 @@
-🌤️ Chennai AI Weather Forecaster: Predicting Today's Mean Temperature
+# 🌤️ Chennai AI Weather Forecaster: Predicting Today's Mean Temperature
 
 An end-to-end Machine Learning and Data Engineering pipeline that predicts the true 24-hour mean temperature for Chennai, India, utilizing historical meteorological data.
 
-🚀 Project Overview
+# 🚀 Project Overview
 
 This project demonstrates a complete, production-level Machine Learning workflow. It bridges the gap between exploratory data science and software engineering by ingesting messy raw data, cleaning and resampling it, storing it in a serverless cloud database, training a Recurrent Neural Network (GRU), and serving predictions via an interactive web dashboard.
 
-📊 The "Mean Temperature" Challenge
+# 📊 The "Mean Temperature" Challenge
 
 While consumer weather applications typically highlight the afternoon peak (Daytime High), this project tackles a more complex statistical challenge: predicting the 24-hour mathematical mean.
 
 For example, on a typical June day in Chennai, the temperature might peak at 36°C in the afternoon but drop to 26°C overnight. This model successfully learns the historical volatility to forecast the true average (~31°C) rather than just the extreme peaks, showcasing a deep understanding of time-series smoothing and data granularity.
 
-🏗️ Architecture & Tech Stack
+# 🏗️ Architecture & Tech Stack
 
 Exploratory Data Analysis: Jupyter Notebook (Gru.ipynb)
 
@@ -24,7 +24,7 @@ Deep Learning: TensorFlow / Keras (GRU Network), Scikit-Learn (MinMaxScaler)
 
 Frontend UI: Streamlit
 
-🧠 Key Technical Highlights
+# 🧠 Key Technical Highlights
 
 1. Automated ETL Pipeline
 
@@ -38,7 +38,7 @@ Implemented a Gated Recurrent Unit (GRU) neural network over a traditional LSTM.
 
 Decoupled the heavy training architecture from the production storefront. The model saves its trained weights (temperature_model.keras) and scaling parameters (scaler.pkl), allowing the Streamlit web app to serve predictions in milliseconds using O(1) inference without requiring runtime retraining.
 
-📂 Repository Structure
+# 📂 Repository Structure
 
 Gru.ipynb: Initial exploratory data analysis, data scaling, and model prototyping.
 
@@ -50,7 +50,7 @@ app.py: The production Streamlit application that fetches the latest 100 days of
 
 .gitignore: Ensures virtual environments (.venv) and local datasets are not committed to version control.
 
-⚙️ How to Run Locally
+# ⚙️ How to Run Locally
 
 Clone the repository
 
@@ -67,12 +67,12 @@ python -m venv .venv
 source .venv/bin/activate
 
 
-#Install dependencies
+# Install dependencies
 
 pip install pandas numpy joblib sqlalchemy psycopg2-binary scikit-learn tensorflow streamlit jupyter
 
 
-#Run the application
+# Run the application
 
 streamlit run app.py
 
