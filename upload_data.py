@@ -1,5 +1,8 @@
 import pandas as pd
 from sqlalchemy import create_engine
+import os
+from dotenv import load_dotenv
+load_dotenv() # This loads the variables from your .env file
 
 local_csv_path = "chennai_weather.csv"
 
@@ -32,7 +35,7 @@ df = df.dropna()
 
 # 5. UPLOAD TO NEON
 # Put your actual Neon URL inside the quotes!
-DATABASE_URL = "postgresql://neondb_owner:npg_ECLnG0UfzPo1@ep-square-hall-attwld7t-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require" 
+DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 
 print("Uploading clean Chennai data to Neon Cloud...")

@@ -1,0 +1,6 @@
+.venv/
+.env
+chennai_weather.csv
+__pycache__/
+*.pkl
+*.keras

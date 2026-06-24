@@ -6,9 +6,12 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import GRU, Dense
 from tensorflow.keras.optimizers import Adam
+import os
+from dotenv import load_dotenv
+load_dotenv() 
 
 # 1. CONNECT TO NEON DATABASE
-DATABASE_URL = "postgresql://neondb_owner:npg_ECLnG0UfzPo1@ep-square-hall-attwld7t-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+Database_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 
 print("Fetching real Chennai data from Neon...")

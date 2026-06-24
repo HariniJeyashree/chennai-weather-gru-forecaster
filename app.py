@@ -4,6 +4,9 @@ import numpy as np
 import joblib
 from tensorflow.keras.models import load_model
 from sqlalchemy import create_engine
+import os
+from dotenv import load_dotenv
+load_dotenv() # This loads the variables from your .env file
 
 # --- 1. PAGE CONFIGURATION (Makes it look attractive) ---
 st.set_page_config(page_title="Chennai Weather AI", page_icon="🌡️", layout="centered")
@@ -23,7 +26,7 @@ def load_ai():
 model, scaler = load_ai()
 
 # --- 3. FETCH EXACTLY 100 DAYS FROM NEON ---
-DATABASE_URL = "postgresql://neondb_owner:npg_ECLnG0UfzPo1@ep-square-hall-attwld7t-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"  # Put your Neon URL here
+DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 
 # Notice the LIMIT 100 because your time_step is 100!
